@@ -26,7 +26,7 @@ pages *= .25
 
 // Initialize a new variable "movie", but leave it undefined
 
-var movie = 
+var movie = ""
 
 // Create a variable named "sequel", and assign it to a be a sequel of your
 // book (made up or not!). Your sequel must make use of your "title" variable from above
@@ -54,14 +54,22 @@ var isShortStory = pages < 25
 // the statement 'I could read that in a day!', otherwise, log the statement 
 // 'Ok, maybe I could read that in a day and a half'
 
-
+if (pages < 1000) {
+    console.log('I could read that in a day!')
+} else {
+    console.log('Ok, maybe I could read that in a day and a half.')
+}
 
 // Express the following in code: If the variable "isFavorite" is true,
 // log the statement 'My favorite book is [title]!'. Otherwise, log the
 // statement 'I recently read the [title] book'. In either case, the value stored in
 // the "title" variable should be included in the logged statement.
 
-
+if (isFavorite) {
+    console.log(`My favorite book is ${title}!`)
+} else {
+    console.log(`I recently read the ${title} book.`)
+}
 
 //------------------------- Arrays -------------------------//
 
