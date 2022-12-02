@@ -14,15 +14,6 @@ function addBook(library, book) {
   return library.shelves[shelf].unshift(book)
 }
 
-// function checkoutBook(library, title, genre) { 
-//     var bookGrab = library.shelves[genre].findIndex((book) => book.title === title)
-//     if (bookGrab === -1) {
-//       return `Sorry, there are currently no copies of ${title} available at the ${library.name}`
-//     } else {
-//       library.shelves[genre].splice(bookGrab, 1)
-//       return `You have now checked out ${title} from the ${library.name}`
-//     }
-// }
 
 function checkoutBook(library, title, genre) {
   var shelf = -1
