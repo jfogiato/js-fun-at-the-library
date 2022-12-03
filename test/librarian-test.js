@@ -82,13 +82,24 @@ describe('Librarian (class)', function() {
     var library = createLibrary("Aurora Public Library");
     var librarian = new Librarian("Casey", library);
     var book = { title: 'The Fifth Season', genre: 'fantasy' }
+    var book2 = { title: 'How to Change Your Mind', genre: 'nonFiction' }
+    var book3 = { title: 'The Bible', genre: 'fiction' }
 
     addBook(librarian.library, book);
+    addBook(librarian.library, book2);
+    addBook(librarian.library, book3);
+
 
     librarian.findBook('The Fifth Season');
+    librarian.findBook('How to Change Your Mind');
+    librarian.findBook('The Bible');
 
     assert.deepEqual(librarian.library.shelves.fantasy, []);
+    assert.deepEqual(librarian.library.shelves.nonFiction, []);
+    assert.deepEqual(librarian.library.shelves.fiction, []);
   });
+
+
 
   it('calculateLateFee should charge the customer a fee of 0.25 per day the book is late, rounded up to the closest whole number (integer)', function() {
     var library = createLibrary("Aurora Public Library");
