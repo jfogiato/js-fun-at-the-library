@@ -66,7 +66,7 @@ describe('Librarian (class)', function() {
     assert.equal(bookConfirmation, "Yes, we have The Fifth Season");
   });
 
-  it.skip('should say if requested book is not found', function() {
+  it('should say if requested book is not found', function() {
     var library = createLibrary("Aurora Public Library");
     var librarian = new Librarian("Casey", library);
     var book = { title: 'The Fifth Season', genre: 'fantasy' }
@@ -78,7 +78,7 @@ describe('Librarian (class)', function() {
     assert.equal(bookConfirmation, "Sorry, we do not have Five Brief Lessons in Physics");
   });
 
-  it.skip('should checkout the book if found', function() {
+  it('should checkout the book if found', function() {
     var library = createLibrary("Aurora Public Library");
     var librarian = new Librarian("Casey", library);
     var book = { title: 'The Fifth Season', genre: 'fantasy' }
@@ -90,7 +90,7 @@ describe('Librarian (class)', function() {
     assert.deepEqual(librarian.library.shelves.fantasy, []);
   });
 
-  it.skip('calculateLateFee should charge the customer a fee of 0.25 per day the book is late, rounded up to the closest whole number (integer)', function() {
+  it('calculateLateFee should charge the customer a fee of 0.25 per day the book is late, rounded up to the closest whole number (integer)', function() {
     var library = createLibrary("Aurora Public Library");
     var librarian = new Librarian("Casey", library);
     var threeDaysLate = librarian.calculateLateFee(3);
