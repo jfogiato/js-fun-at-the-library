@@ -10,8 +10,9 @@ class Librarian {
     var genreArray = Object.keys(this.library.shelves)
     for (var i = 0; i < genreArray.length; i++) {
       var genre = Object.keys(this.library.shelves)[i]
-      if (this.library.shelves[genre][i].title === bookString) {
-        this.library.shelves[genre].splice(i, 1)
+      var shelf = this.library.shelves[genre]
+      if (shelf[i].title === bookString) {
+        shelf.splice(i, 1)
         return `Yes, we have ${bookString}`
       } else {
         return `Sorry, we do not have ${bookString}`
@@ -23,16 +24,5 @@ class Librarian {
   }
 }
 
-// ***createLibrary & checkoutBook FUNCTIONS FROM LIBRARY.JS FOR DATA STRUCTURE REFERENCE***
-// function createLibrary(name) {
-//   return {
-//     name: name,
-//     shelves: {
-//       fantasy: [{title: 'The Fifth Season', genre: 'fantasy'}],
-//       fiction: [],
-//       nonFiction: []
-//     }
-//   }
-// }
 
 module.exports = Librarian;
